@@ -8,19 +8,17 @@ import { UsuarioModel } from 'src/app/models/usuario.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   usuario: UsuarioModel = new UsuarioModel();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onLogin(form: NgForm) {
-
+    if (form.invalid) {
+      return;
+    }
+    console.log(this.usuario);
     console.log('imprimir si el formulario es valido');
-
   }
-
-
 }
