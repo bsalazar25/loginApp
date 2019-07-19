@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   usuario: UsuarioModel = new UsuarioModel();
   recordarme = false;
 
@@ -26,7 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form: NgForm) {
-
+    if (form.invalid) {
+      return;
+    }
+    console.log(this.usuario);
     console.log('imprimir si el formulario es valido');
 
     if (form.invalid) { return; }
@@ -55,6 +57,4 @@ export class LoginComponent implements OnInit {
     });
 
   }
-
-
 }
